@@ -56,5 +56,24 @@ body, html {
   color: rgba(177, 177, 177, 0.514);
   background: #888888;
 }
+.slider3k5__dots {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider3k5__dots .slider3k5__dot {
+  opacity: 0.3;
+  font-size: 30px;
+  margin: 2px 5px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+.slider3k5__dots .slider3k5__dot:hover, .slider3k5__dots .slider3k5__dot.active {
+  opacity: 1;
+}
 
 /*# sourceMappingURL=slider3k5.css.map */

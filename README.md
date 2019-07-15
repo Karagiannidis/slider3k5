@@ -4,8 +4,9 @@ Simple JS slider
 Usage:
 
 ```javascript
-createSlider("slider-container-id", {
-    hasArrows: false, //default true;
+createSlider("slider-container", {
+    hasArrows: true, //default true;
+    hasDots: true, //default true;
     slidesFile: "./slides.json",
 });
 ```
