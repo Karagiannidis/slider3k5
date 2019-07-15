@@ -95,7 +95,7 @@ function appendArrows() {
 
 //creates slider, first parameter is the Parent Id, second param is options
 //available options: hasArrows
-function createSlider(targetId, options) {
+async function createSlider(targetId, options) {
     targetDiv = document.getElementById(targetId);
     let sliderContainer = document.createElement("div");
     sliderContainer.classList.add("slider3k5");
@@ -112,9 +112,21 @@ function createSlider(targetId, options) {
     targetDiv.appendChild(sliderContainer);
     
     if(options.slidesFile) {
-        createSlides(options.slidesFile, sliderContainer);
+        await createSlides(options.slidesFile, sliderContainer);
         appendArrows();
-        // appendDots();
+        if(options.autoplayMode != false){
+            if(options.autoplayDirection == 'rtl'){
+                if(Number.isInteger(options.autoplaySpeed)){
+                    sliderAutoplay(options.autoplaySpeed, options.autoplayDirection);
+                }else{
+                    sliderAutoplay(3000, options.autoplayDirection);
+                }
+            }else {
+                sliderAutoplay(options.autoplaySpeed);
+            }
+        }
+        
+
     }else {
         console.log('Slides File not specified.')
     }
@@ -195,5 +207,20 @@ function createDots(slidesCounter) {
         
     }
     return dotsContainer;
+}
+
+
+function sliderAutoplay(speed, direction){
+    if(direction!='rtl'){
+        let nextArrow = document.querySelector('.slider3k5__btn#next');
+        setInterval(()=>{
+            nextArrow.click();
+        },speed);
+    }else{
+        let prevArrow = document.querySelector('.slider3k5__btn#prev');
+        setInterval(()=>{
+            prevArrow.click();
+        },speed);
+    }
 }
 
