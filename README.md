@@ -10,13 +10,14 @@ When offline the URL scheme of slidesFile must be http/https otherwise the CORS 
 **Usage:**
 
 ```javascript
-createSlider("slider-container", {
+createSlider("slider-container-id", {
     slidesFile: "./slides.json", // must be specified
     hasArrows: true, //default true;
     hasDots: true, //default true;
-    autoplayMode: true, //default false
-    autoplaySpeed: 2000, //default 3000
-    autoplayDirection: 'rtl' //default ltr
+    autoplayMode: false, //default false
+    autoplaySpeed: 1000, //default 3000
+    autoplayDirection: 'rtl', //default ltr
+    animationStyle: 1 //default 0, max 5
 });
 ```
 

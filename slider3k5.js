@@ -76,6 +76,11 @@ function createSlider(targetId, options) {
                 sliderAutoplay(options.autoplaySpeed, options.autoplayDirection, targetId);
             }
         }
+        if(!options.animationStyle){
+            createAnimationStyle(0, targetId);
+        }else {
+            createAnimationStyle(options.animationStyle, targetId);
+        }
         
 
     }else {
@@ -190,7 +195,6 @@ function updateDotOnArrowClick(arrow, sliderContainerId) {
 //adds click functionallity on arrow depending the arrow (0 for next, -1 for prev)
 function addClickFunctionality(i, sliderContainerId) {
     let activeSlide = document.querySelector('#'+sliderContainerId+' .slider3k5__slide.active');
-    console.log(activeSlide);
     let nextSlide;
     if(i==0){
         nextSlide = activeSlide.nextElementSibling;
@@ -218,3 +222,33 @@ function addClickFunctionality(i, sliderContainerId) {
     }
 };
 
+
+//creates the css rules for the selected animation
+function createAnimationStyle(animation, sliderContainerId) {
+    let slider = document.getElementById(sliderContainerId).querySelector(".slider3k5");    
+    if(Number.isInteger(animation) && animation != 0){
+        switch (animation) {
+            case 1:
+                slider.classList.add('slider3k5Animation1');
+                break;
+            case 2:
+                slider.classList.add('slider3k5Animation2');
+                break;
+            case 3:
+                slider.classList.add('slider3k5Animation3');
+                break;
+            case 4:
+                slider.classList.add('slider3k5Animation4');
+                break;
+            case 5:
+                slider.classList.add('slider3k5Animation5');
+                break;
+        
+            default:
+                //default animation
+                break;
+        }
+    }else {
+        //default animation
+    }
+}

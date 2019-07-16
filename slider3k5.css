@@ -17,7 +17,6 @@ body, html {
   height: 100%;
   width: 100%;
   position: absolute;
-  transform: translate(5%, -5%) rotate3d(1, 1, 1, 15deg);
   left: 0;
   opacity: 0;
   transition: all 0.5s linear;
@@ -26,7 +25,6 @@ body, html {
 }
 .slider3k5__slide.active {
   opacity: 1;
-  transform: translate(0) rotate3d(0, 0, 0, 0deg);
 }
 .slider3k5__btns {
   position: absolute;
@@ -64,6 +62,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99;
 }
 .slider3k5__dots .slider3k5__dot {
   opacity: 0.3;
@@ -74,6 +73,45 @@ body, html {
 }
 .slider3k5__dots .slider3k5__dot:hover, .slider3k5__dots .slider3k5__dot.active {
   opacity: 1;
+}
+
+.slider3k5Animation1 .slider3k5__slide {
+  transform: translate(5%, -5%) rotate3d(1, 1, 1, 15deg);
+}
+.slider3k5Animation1 .slider3k5__slide.active {
+  transform: translate(0) rotate3d(0, 0, 0, 0deg);
+}
+
+.slider3k5Animation2 .slider3k5__slide {
+  transform: translate(100%, 0);
+  transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+}
+.slider3k5Animation2 .slider3k5__slide.active {
+  transform: translate(0);
+}
+
+.slider3k5Animation3 .slider3k5__slide {
+  transform: translate(-100%, 0);
+  transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+}
+.slider3k5Animation3 .slider3k5__slide.active {
+  transform: translate(0);
+}
+
+.slider3k5Animation4 .slider3k5__slide {
+  transform: translate(0, 100%);
+  transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+}
+.slider3k5Animation4 .slider3k5__slide.active {
+  transform: translate(0);
+}
+
+.slider3k5Animation5 .slider3k5__slide {
+  transform: translate(0, -100%);
+  transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+}
+.slider3k5Animation5 .slider3k5__slide.active {
+  transform: translate(0);
 }
 
 /*# sourceMappingURL=slider3k5.css.map */
