@@ -63,7 +63,7 @@ function createSlider(targetId, options) {
     targetDiv.appendChild(sliderContainer);
     
     if(options.slidesFile) {
-        createSlides(options.slidesFile, sliderContainer, targetId);
+        createSlides(options.slidesFile, sliderContainer, targetId, options);
         appendArrows(targetId);
         if(options.autoplayMode != false){
             if(options.autoplayDirection == 'rtl'){
@@ -88,13 +88,13 @@ function createSlider(targetId, options) {
     }
 }
 
-function createSlides(jsonFileUrl, sliderContainer, sliderContainerId) {
+function createSlides(jsonFileUrl, sliderContainer, sliderContainerId, options) {
     let firstSlide;
     let lastSlide;
     fetch(jsonFileUrl)
 	.then(response => response.json())
 	.then(parsed => {
-        parsed.forEach(({title, description, url}, i) => {
+        parsed.forEach(({title, description,moreLink, isBgLink, url}, i) => {
             let newSlide = document.createElement("div");
             newSlide.classList.add("slider3k5__slide");
             newSlide.style.backgroundImage = "url('"+url+"')";
@@ -104,6 +104,39 @@ function createSlides(jsonFileUrl, sliderContainer, sliderContainerId) {
             }else if(i+1==parsed.length){
                 lastSlide=newSlide;
             }
+            if(title!="") {
+                let titleDiv = document.createElement("div");
+                titleDiv.classList.add('slider3k5__slide__title');
+                titleDiv.innerHTML = title;
+                newSlide.appendChild(titleDiv);
+            }
+            if(description!=""){
+                let descriptionDiv = document.createElement("div");
+                descriptionDiv.classList.add('slider3k5__slide__description');
+                descriptionDiv.innerHTML = description;
+                newSlide.appendChild(descriptionDiv);
+            }
+            
+            if(moreLink != "") {
+                let moreDiv = document.createElement("a");
+                moreDiv.setAttribute("href", moreLink);
+                if(isBgLink){
+                    moreDiv.classList.add('slider3k5__slide__morebg');
+                }else{
+                    if(options.moreText){
+                        console.log(options.moreText);
+                        moreDiv.textContent = options.moreText;
+                    }else{
+                        moreDiv.textContent = "Read more";
+                    }
+                    moreDiv.classList.add('slider3k5__slide__more');
+
+                }
+                newSlide.appendChild(moreDiv);
+
+            }
+
+
             sliderContainer.appendChild(newSlide);
             
         });
@@ -223,32 +256,29 @@ function addClickFunctionality(i, sliderContainerId) {
 };
 
 
-//creates the css rules for the selected animation
+//adds the css class for the selected animation
 function createAnimationStyle(animation, sliderContainerId) {
     let slider = document.getElementById(sliderContainerId).querySelector(".slider3k5");    
-    if(Number.isInteger(animation) && animation != 0){
-        switch (animation) {
-            case 1:
-                slider.classList.add('slider3k5Animation1');
-                break;
-            case 2:
-                slider.classList.add('slider3k5Animation2');
-                break;
-            case 3:
-                slider.classList.add('slider3k5Animation3');
-                break;
-            case 4:
-                slider.classList.add('slider3k5Animation4');
-                break;
-            case 5:
-                slider.classList.add('slider3k5Animation5');
-                break;
-        
-            default:
-                //default animation
-                break;
-        }
-    }else {
-        //default animation
+    switch (animation) {
+        case 1:
+            slider.classList.add('slider3k5Animation1');
+            break;
+        case 2:
+            slider.classList.add('slider3k5Animation2');
+            break;
+        case 3:
+            slider.classList.add('slider3k5Animation3');
+            break;
+        case 4:
+            slider.classList.add('slider3k5Animation4');
+            break;
+        case 5:
+            slider.classList.add('slider3k5Animation5');
+            break;
+    
+        default:
+            //default animation
+            break;
     }
+    
 }
