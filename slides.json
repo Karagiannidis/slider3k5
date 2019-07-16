@@ -7,6 +7,7 @@
         "isBgLink": true
     },
     {
+        "title": "",
         "description": "Slide without title and with read more button.",
         "url": "https://picsum.photos/1200/1200",
         "moreLink": "https://github.com/Karagiannidis/slider3k5",
@@ -14,6 +15,9 @@
     },
     {
         "title": "Slide without button or description",
-        "url": "https://picsum.photos/1300/1300"
+        "description": "",
+        "url": "https://picsum.photos/1300/1300",
+        "moreLink": "",
+        "isBgLink": false
     }
 ]
