@@ -14,10 +14,11 @@ createSlider("slider-container-id", {
     slidesFile: "./slides.json", // must be specified
     hasArrows: true, //default true;
     hasDots: true, //default true;
-    autoplayMode: false, //default falseg
-    autoplaySpeed: 1000, //default 3000
+    autoplayMode: false, //default false
+    autoplaySpeed: 2000, //default 3000
     autoplayDirection: 'rtl', //default ltr
-    animationStyle: 1 //default 0, max 5
+    animationStyle: 1, //default 0, max 5
+    moreText: 'Read More..' //default 'Read more'
 });
 ```
 
