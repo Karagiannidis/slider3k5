@@ -14,7 +14,7 @@ createSlider("slider-container-id", {
     slidesFile: "./slides.json", // must be specified
     hasArrows: true, //default true;
     hasDots: true, //default true;
-    autoplayMode: false, //default false
+    autoplayMode: false, //default falseg
     autoplaySpeed: 1000, //default 3000
     autoplayDirection: 'rtl', //default ltr
     animationStyle: 1 //default 0, max 5
@@ -25,4 +25,4 @@ createSlider("slider-container-id", {
 
 * Responsivness accross all browsers and devices.
 * Touch/Drag feature.
-* Load content on slide via json data. 
+* ~~Load content on slide via json data.~~ 
