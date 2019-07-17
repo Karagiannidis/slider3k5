@@ -30,3 +30,6 @@ createSlider3k5("slider-container-id", {
 
 **Known Bugs:**
 * Slider doesn't work on Edge cause ES6.
+* Dots and Arrows are not being displayed correctly on mobile devices.
+
+**DEMO:** https://karagiannidis.github.io/slider3k5/
