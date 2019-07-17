@@ -10,7 +10,7 @@ When offline the URL scheme of slidesFile must be http/https otherwise the CORS 
 **Usage:**
 
 ```javascript
-createSlider("slider-container-id", {
+createSlider3k5("slider-container-id", {
     slidesFile: "./slides.json", // must be specified
     hasArrows: true, //default true;
     hasDots: true, //default true;
@@ -24,6 +24,9 @@ createSlider("slider-container-id", {
 
 **TODO:**
 
-* Responsivness accross all browsers and devices.
+* ~~Responsivness.~~
 * Touch/Drag feature.
-* ~~Load content on slide via json data.~~ 
+* ~~Load content on slide via json data.~~
+
+**Known Bugs:**
+* Slider doesn't work on Edge cause ES6.
