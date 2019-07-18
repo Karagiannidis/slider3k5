@@ -35,16 +35,12 @@ body, html {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  padding: 30px;
+  padding: 40px;
   z-index: 99;
 }
 .slider3k5__btns .slider3k5__btn {
   width: 45px;
   height: 45px;
-  font-size: 70px;
-  line-height: 45px;
-  text-align: center;
-  font-weight: 400;
   border-radius: 50%;
   color: #cccccc;
   background: rgba(173, 173, 173, 0.719);
@@ -55,6 +51,38 @@ body, html {
   color: #adadad;
   background: rgba(173, 173, 173, 0.562);
   border-radius: 30% 40%;
+}
+.slider3k5__btns .slider3k5__btn#next::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 35px;
+  background: #cccccc;
+  -webkit-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+  clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+  top: 50%;
+  transform: translate(10px, -50%);
+  transition: all 0.4s ease-in-out;
+}
+.slider3k5__btns .slider3k5__btn#next:hover::before {
+  width: 70px;
+  transform: translate(5px, -50%);
+}
+.slider3k5__btns .slider3k5__btn#prev::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 35px;
+  background: #cccccc;
+  -webkit-clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+  clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+  top: 50%;
+  transform: translate(-25px, -50%);
+  transition: all 0.4s ease-in-out;
+}
+.slider3k5__btns .slider3k5__btn#prev:hover::before {
+  width: 70px;
+  transform: translate(-30px, -50%);
 }
 .slider3k5__btns .slider3k5__btn#prev:hover {
   transform: translate(-5px, 0);
@@ -73,16 +101,26 @@ body, html {
   z-index: 99;
 }
 .slider3k5__dots .slider3k5__dot {
-  opacity: 0.3;
-  font-size: 30px;
-  margin: 2px 5px;
+  width: 25px;
+  height: 25px;
+  margin: 3px 8px;
   box-sizing: border-box;
   border: 1px solid transparent;
   border-radius: 30% 40%;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
 }
-.slider3k5__dots .slider3k5__dot:hover, .slider3k5__dots .slider3k5__dot.active {
+.slider3k5__dots .slider3k5__dot::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: white;
+  opacity: 0.3;
+  border-radius: 50%;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+}
+.slider3k5__dots .slider3k5__dot:hover::before, .slider3k5__dots .slider3k5__dot.active::before {
   opacity: 1;
   transform: rotate(360deg) scale(1.1);
 }
@@ -216,6 +254,68 @@ body, html {
     font-size: 13px;
     padding: 5px;
     border-radius: 2px;
+  }
+
+  .slider3k5__dots {
+    bottom: 10px;
+    height: 20px;
+  }
+  .slider3k5__dots .slider3k5__dot {
+    width: 15px;
+    height: 15px;
+    margin: 3px 5px;
+  }
+  .slider3k5__dots .slider3k5__dot::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+  }
+
+  .slider3k5__btns .slider3k5__btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #cccccc;
+    background: rgba(173, 173, 173, 0.719);
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+  }
+  .slider3k5__btns .slider3k5__btn:hover {
+    color: #adadad;
+    background: rgba(173, 173, 173, 0.562);
+    border-radius: 30% 40%;
+  }
+  .slider3k5__btns .slider3k5__btn#next::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    background: #cccccc;
+    -webkit-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+    top: 50%;
+    transform: translate(10px, -50%);
+    transition: all 0.4s ease-in-out;
+  }
+  .slider3k5__btns .slider3k5__btn#next:hover::before {
+    width: 40px;
+    transform: translate(5px, -50%);
+  }
+  .slider3k5__btns .slider3k5__btn#prev::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    background: #cccccc;
+    -webkit-clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+    top: 50%;
+    transform: translate(-10px, -50%);
+    transition: all 0.4s ease-in-out;
+  }
+  .slider3k5__btns .slider3k5__btn#prev:hover::before {
+    width: 40px;
+    transform: translate(-15px, -50%);
   }
 }
 

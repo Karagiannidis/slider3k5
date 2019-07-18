@@ -9,12 +9,10 @@ function createArrows(sliderContainerId) {
     let prevArrow = document.createElement("div")
     prevArrow.classList.add("slider3k5__btn");
     prevArrow.id = `prev`;
-    prevArrow.innerHTML = `⬅`;
     //create next arrow
     let nextArrow = document.createElement("div")
     nextArrow.classList.add("slider3k5__btn");
     nextArrow.id = `next`;
-    nextArrow.innerHTML = `➡`;
     //appends arrows to container
     arrowsContainer.appendChild(prevArrow);
     arrowsContainer.appendChild(nextArrow);
@@ -152,7 +150,6 @@ function createDots(slidesCounter, sliderContainerId) {
     for (let i = 0; i < slidesCounter; i++) {
         let newDot = document.createElement("div");
         newDot.classList.add("slider3k5__dot");
-        newDot.innerHTML = '⚫';
 
         if(i==0){
             newDot.classList.add('active');
