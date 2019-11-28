@@ -33,7 +33,7 @@ function createArrows(sliderContainerId) {
 
 //appends arrows to slider except if data-arrows is set to false
 function appendArrows(sliderContainerId) {
-    sliderContainer = document.getElementById(sliderContainerId);
+    let sliderContainer = document.getElementById(sliderContainerId);
     Array.from(sliderContainer.getElementsByClassName("slider3k5")).forEach(singleSlider => {
         if(singleSlider.dataset.arrows != "false"){
             singleSlider.appendChild(createArrows(sliderContainerId));
@@ -44,7 +44,7 @@ function appendArrows(sliderContainerId) {
 
 //creates slider, first parameter is the Parent Id, second param is options
 function createSlider3k5(targetId, options) {
-    targetDiv = document.getElementById(targetId);
+    let targetDiv = document.getElementById(targetId);
     let sliderContainer = document.createElement("div");
     sliderContainer.classList.add("slider3k5");
     if(options.hasArrows == false) {

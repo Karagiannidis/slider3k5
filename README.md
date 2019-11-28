@@ -25,7 +25,4 @@ createSlider3k5("slider-container-id", {
 **TODO:**
 * Touch/Drag feature.
 
-**Known Bugs:**
-* Slider doesn't work on Edge cause ES6.
-
 **DEMO:** https://karagiannidis.github.io/slider3k5/
