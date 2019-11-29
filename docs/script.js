@@ -1,6 +1,5 @@
 createSlider3k5("slider-container-id", {
-    // slidesFile: "./slides.json", // must be specified
-    slidesFile: "https://raw.githubusercontent.com/Karagiannidis/slider3k5/master/slides.json", // must be specified
+    slidesFile: "./slides.json", // must be specified
     hasArrows: true, //default true;
     hasDots: true, //default true;
     autoplayMode: false, //default false
