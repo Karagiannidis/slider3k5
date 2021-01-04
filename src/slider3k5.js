@@ -1,5 +1,3 @@
-
-
 //create and return the arrow container with prev and next arrows
 function createArrows(sliderContainerId) {
     //create the arrows container
